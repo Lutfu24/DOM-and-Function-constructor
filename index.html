@@ -7,24 +7,58 @@
     <title>Document</title>
   </head>
   <style>
-    .inputs{
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        padding: 40px;
-        gap: 20px;
-        border: 1px solid black;
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      padding: 40px;
+      gap: 20px;
+      border: 1px solid black;
+    }
+    .table {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    .th {
+      border: 1px solid black;
+      padding: 10px 50px;
+      font-size: 20px;
+    }
+    .td {
+      border: 1px solid black;
+      text-align: center;
+      font-size: 18px;
+    }
+    body {
+      display: flex;
+      justify-content: space-between;
     }
   </style>
   <body>
     <div class="inputs">
-      <input type="text" name="" id="brand" placeholder="Brand" />
+      <input type="text" required name="" id="brand" placeholder="Brand" />
       <input type="text" name="" id="model" placeholder="Model" />
       <input type="text" name="" id="year" placeholder="Year" />
       <input type="text" name="" id="desc" placeholder="Description" />
-      <label for="checkbox"><input type="checkbox" name="checkbox" id="checkbox">New or Old</label>
+      <label for="checkbox"
+        ><input type="checkbox" name="checkbox" id="checkbox" />New</label
+      >
       <button class="btn">Submit</button>
+      <button type="reset">Reset</button>
     </div>
     <script src="./main.js"></script>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="th">Brand</th>
+          <th class="th">Model</th>
+          <th class="th">Year</th>
+          <th class="th">Description</th>
+          <th class="th">isNew</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+      </tbody>
+    </table>
   </body>
 </html>

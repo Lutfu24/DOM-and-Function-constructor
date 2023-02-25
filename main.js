@@ -8,17 +8,26 @@ class Car {
   }
 }
 
-const brand = document.getElementById("brand");
-const model = document.getElementById("model");
-const year = document.getElementById("year");
-const desc = document.getElementById("desc");
-const checkbox = document.getElementById("checkbox");
-
 const btn = document.querySelector(".btn");
+const carArr = [];
+const myFunction = () => {
+  let brand = document.getElementById("brand").value;
+  let model = document.getElementById("model").value;
+  let year = document.getElementById("year").value;
+  let desc = document.getElementById("desc").value;
+  let checkbox = document.getElementById("checkbox").checked;
+  let tbody = document.querySelector("tbody");
 
-const myFunction = (brand, model, year, desc, checkbox) => {
-  const car = new Car(brand, model, year, desc, checkbox);
-  console.log({car});
+  let car = new Car(brand, model, year, desc, checkbox);
+  carArr.push(car);
+  console.log({carArr});
+  tbody.innerHTML += `<tr>
+  <td class="td">${car.brand}</td>
+  <td class="td">${car.model}</td>
+  <td class="td">${car.year}</td>
+  <td class="td">${car.description}</td>
+  <td class="td">${car.isNew}</td>
+</tr>`
 };
 
 btn.addEventListener("click", myFunction);
